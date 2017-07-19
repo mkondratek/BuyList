@@ -1,0 +1,282 @@
+/* !-- css clear begin --! */
+body, div, dl, dt, dd, ul, ol, li, h1,
+h2, h3, h4, h5, h6, pre, form, fieldset,
+input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, caption, cite, code,
+dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr, acronym {
+    border: 0;
+}
+
+/* !-- css clear end --! */
+
+html, body {
+    /*background:url('images/bg.png');*/
+    background-color: #2D213A;
+    color: #555;
+    font-size: 14px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+#site_header {
+    width: 740px;
+    margin: 0 auto;
+}
+
+#site_header h1 {
+    font-family: 'Oxygen Mono', monospace;
+    font-size: 42px;
+    letter-spacing: 9px;
+    text-align: right;
+    color: #fff;
+    position: relative;
+    top: 60px;
+    font-weight: 700;
+    text-shadow: -1px -1px 1px #3a5e40
+}
+
+#site_header h2 {
+    font-family: 'Oxygen Mono', monospace;
+    font-size: 32px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    top: 60px;
+    font-weight: 700;
+    text-shadow: -1px -1px 1px #3a5e40
+}
+
+#site_logo {
+    float: left;
+    position: relative;
+    top: 36px;
+    left: -24px;
+}
+
+#site_container {
+    background: #D45C67;
+    width: 700px;
+    padding-top: 172px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: -100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid #003643;
+    border-bottom: 30px solid #003643;
+    text-align: center;
+}
+
+#site_footer {
+    font-family: 'Oxygen Mono', monospace;
+    font-size: 12px;
+    text-align: center;
+    margin: 0 auto;
+    color: gainsboro;
+    margin-top: -23px;
+}
+
+.mail {
+    font-family: 'Oxygen Mono', monospace;
+    font-size: 12px;
+    color: gainsboro;
+    text-decoration: none;
+}
+
+.clear {
+    clear: both;
+}
+
+#logbutton {
+    display: inline-block;
+}
+
+#regbutton {
+    display: inline-block;
+}
+
+h1 {
+    font-family: 'Oxygen Mono', monospace;
+    margin: 0 0 12px 0;
+    font-size: 32px;
+    color: #003643;
+    font-weight: bold;
+}
+
+#site_container #form_error {
+    color: #c80000;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#site_container h2 {
+    font-family: 'Oxygen Mono', monospace;
+    margin: auto;
+    font-size: 22px;
+    margin-bottom: 2px;
+    color: #003643;
+    font-weight: bold;
+}
+
+input, textarea {
+    border: 1px solid #003643;
+    background: #e9fce3;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 300px;
+    display: block;
+    margin: auto;
+}
+
+textarea {
+    height: 140px;
+}
+
+label {
+    font-size: 33px;
+    margin: 0 0 4px 0;
+}
+
+input.submit {
+    width: auto;
+    color: #fff;
+    background: #941f1f;
+    font-size: 22px;
+    padding: 5px 12px;
+    margin: auto;
+    border: 1px solid #7d1515;
+}
+
+
+input.submit:hover {
+    background-color: #ca2424;
+}
+
+.success {
+    padding: 5px 12px;
+    background: #7b9971;
+    border: #7b9971 solid 1px;
+    color: #fff;
+    margin: 0 0 12px 0;
+}
+
+.item td {
+    border-bottom: 1px solid #ccc;
+    padding: 12px 0;
+}
+
+.item_image img {
+    margin: 0 16px 0 0;
+}
+
+.item_price h3 {
+    margin: 0;
+}
+
+.item_price a {
+    font-weight: 900;
+    font-family: 'Oxygen Mono', monospace;
+    color: #941f1f;
+    text-decoration: none;
+}
+
+.item_price a:hover {
+    color: #ca2424;
+}
+
+.item_price .price {
+    font-size: 22px;
+}
+
+.item_price .text {
+    position: relative;
+    top: -2px;
+}
+
+.item_content {
+    padding: 0 42px 0 0;
+    width: 340px;
+}
+
+.item_content h2 {
+    font-size: 24px;
+    font-family: 'Oxygen Mono', monospace;
+}
+
+.delbutton {
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin: auto;
+}
+
+.delbutton:hover {
+    background-color: #ca2424;
+}
+
+#logout {
+    background-color: #7d1515;
+    width: 100px;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#logout:hover {
+    background-color: #ca2424;
+}
+
+#line {
+    height: 12px;
+    width: 575px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+    margin-top: -25px;
+    margin-left: 125px;
+    margin-bottom: 20px;
+}
+
+.g-recaptcha {
+    width: 43%;
+    margin: 0 auto;
+}
