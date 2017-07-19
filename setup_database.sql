@@ -1,13 +1,11 @@
 create table users (
-  username VARCHAR(32) PRIMARY KEY,
-  first_name VARCHAR(255),
-  last_name VARCHAR(255),
+  username VARCHAR(20) PRIMARY KEY,
   email VARCHAR(255),
-  password VARCHAR(64)
+  password VARCHAR(255)
 );
 
 CREATE table items (
-  user VARCHAR(32) REFERENCES users(username),
+  user VARCHAR(20) REFERENCES users(username),
   name VARCHAR(255),
   description text(1024),
   price NUMERIC(8,2),

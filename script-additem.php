@@ -6,7 +6,7 @@
  * Time: 15:32
  */
 
-require_once "config.php";
+require_once "connect.php";
 
 $target_path = $_SERVER['DOCUMENT_ROOT']."./uploads/";
 $target_path = $target_path . basename( $_FILES['file']['name']);

@@ -5,7 +5,11 @@
  * Date: 12.07.17
  * Time: 15:29
  */
-session_start();
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 unset($_SESSION['user']);
 
 include "./header.php"; ?>

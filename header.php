@@ -6,6 +6,40 @@
  * Time: 15:30
  */
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['user']) OR empty($_SESSION['user'])) {
+    if ($_SERVER['REQUEST_URI'] != '/login.php'
+        and $_SERVER['REQUEST_URI'] != '/register.php'
+        and $_SERVER['REQUEST_URI'] != '/script-login.php'
+        and $_SERVER['REQUEST_URI'] != '/script-register.php'
+        and $_SERVER['REQUEST_URI'] != '/index.php'
+        and $_SERVER['REQUEST_URI'] != '/login.php?'
+        and $_SERVER['REQUEST_URI'] != '/register.php?'
+        and $_SERVER['REQUEST_URI'] != '/script-login.php?'
+        and $_SERVER['REQUEST_URI'] != '/script-register.php?'
+        and $_SERVER['REQUEST_URI'] != '/index.php?') {
+        header("Location: index.php");
+        exit();
+    }
+}
+else if (isset($_SESSION['user']) and !empty($_SESSION['user'])) {
+    if ($_SERVER['REQUEST_URI'] == '/login.php'
+        or $_SERVER['REQUEST_URI'] == '/register.php'
+        or $_SERVER['REQUEST_URI'] != '/script-login.php'
+        or $_SERVER['REQUEST_URI'] != '/script-register.php'
+        or $_SERVER['REQUEST_URI'] == '/index.php'
+        or $_SERVER['REQUEST_URI'] == '/login.php?'
+        or $_SERVER['REQUEST_URI'] == '/register.php?'
+        or $_SERVER['REQUEST_URI'] != '/script-login.php?'
+        or $_SERVER['REQUEST_URI'] != '/script-register.php?'
+        or $_SERVER['REQUEST_URI'] == '/index.php?') {
+        header("Location: list.php");
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>

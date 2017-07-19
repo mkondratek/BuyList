@@ -6,11 +6,14 @@
  * Time: 15:31
  */
 
-session_start();
-include "header.php";
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+include_once "header.php";
 ?>
 
-<form method="post" action="script-login.php">
+<form method="post" action="/script-login.php">
     <h1>Log in</h1>
     <input type="text" name="username" id="username" placeholder="username">
     <br />
@@ -25,7 +28,7 @@ include "header.php";
     <input type="submit" value="Log in" class="submit">
     <h2>or</h2>
 </form>
-    <form action="register.php">
+    <form action="/register.php">
         <input type="submit" value="Register" class="submit">
     </form>
-<?php include "footer.php"; ?>
+<?php include_once "footer.php"; ?>

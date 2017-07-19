@@ -6,7 +6,7 @@
  * Time: 16:18
  */
 
-require_once "config.php";
+require_once "connect.php";
 
 $sql = "delete from items where name = " . $_POST["delname"] . ";";
 

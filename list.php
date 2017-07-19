@@ -7,7 +7,7 @@
  */
 
 include "./header.php";
-require_once "config.php";
+require_once "connect.php";
 $user = $_SESSION['user'];
 ?>
 
