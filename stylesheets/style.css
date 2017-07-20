@@ -167,8 +167,6 @@ input, textarea {
     width: 300px;
     display: block;
     margin: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
 }
 
 textarea {
@@ -179,6 +177,17 @@ label {
     font-size: 20px;
     font-weight: bold;
     margin: 0 0 4px 0;
+}
+
+#addingform label {
+    display: inline-block;
+    margin: 15px;
+    color: black;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Ubuntu Mono", sans-serif;
 }
 
 input.submit {

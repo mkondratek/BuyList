@@ -18,7 +18,7 @@ if (isset($_GET['uploaded']) AND $_GET['uploaded'] == "true") {
 
 ?>
 
-    <form method="post" action="script-additem.php" enctype="multipart/form-data">
+    <form method="post" action="script-additem.php" enctype="multipart/form-data" id="addingform">
         <h1>Add an Item</h1>
 
         <label for="name">name</label>

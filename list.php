@@ -59,14 +59,14 @@ $user = $_SESSION['user'];
             <td width="220" class='item_price'>
                 <h3>
                     <?php
-                    if ($item->link !== "none") echo "<a href='$item->link'>";
+                    if ($item->link !== "") echo "<a href='$item->link'>";
                     else echo "<a target='_blank' href='http://www.google.com/search?q=$item->name'>";
                     ?>
                     <span class='price'>$<?php echo number_format($item->price, 2, ', ', ' ') ?></span>
                     </a>
                 </h3>
                 <?php
-                if ($item->link !== "none") echo "<a href='$item->link'>";
+                if ($item->link !== "") echo "<a href='$item->link'>";
                 else echo "<a target='_blank' href='http://www.google.com/search?q=$item->name'>";
                 ?>
                 buy online
