@@ -15,7 +15,7 @@ require_once "connect.php";
 $username = htmlentities($_POST["username"], ENT_QUOTES, "UTF-8");
 $password = $_POST["password"];
 
-$sql = sprintf("SELECT username FROM users
+$sql = sprintf("SELECT username, password FROM users
 WHERE users.username = '%s'", mysqli_real_escape_string($db, $username));
 
 $log = fopen("log.txt", "a");
@@ -28,9 +28,9 @@ function incorrect_input(&$file) {
 }
 
 if ($result = @$db->query($sql)) {
-    if ($user = $result->fetch_object()) {
-        if (password_verify($password, $user->password)) {
-            $_SESSION['user'] = $user->username;
+    if ($user = $result->fetch_assoc()) {
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['user'] = $user['username'];
             fwrite($log, date("d-m-Y h:i:sa") . " LOGGED IN\n" . $sql . "\n");
             header("Location: /list.php");
         } else {
@@ -39,6 +39,8 @@ if ($result = @$db->query($sql)) {
     } else {
         incorrect_input($log);
     }
+
+    $result->free();
 } else {
     incorrect_input($log);
 }

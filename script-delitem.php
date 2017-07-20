@@ -6,10 +6,13 @@
  * Time: 16:18
  */
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 require_once "connect.php";
 
-$sql = "delete from items where name = " . $_POST["delname"] . ";";
-
+$sql = sprintf("delete from items where id = " . $_POST['delid'] . ";");
 $log = fopen("log.txt", "a");
 
 if (mysqli_query($db, $sql) == true) {

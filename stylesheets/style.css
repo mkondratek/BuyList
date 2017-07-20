@@ -167,6 +167,8 @@ input, textarea {
     width: 300px;
     display: block;
     margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 textarea {
@@ -174,7 +176,8 @@ textarea {
 }
 
 label {
-    font-size: 33px;
+    font-size: 20px;
+    font-weight: bold;
     margin: 0 0 4px 0;
 }
 
@@ -187,7 +190,6 @@ input.submit {
     margin: auto;
     border: 1px solid #7d1515;
 }
-
 
 input.submit:hover {
     background-color: #ca2424;
@@ -256,25 +258,73 @@ input.submit:hover {
 }
 
 #logout {
+    float: left;
     background-color: #7d1515;
     width: 100px;
     margin-left: 0;
     margin-top: 0;
     margin-bottom: 10px;
+    margin-right: 15px;
 }
 
 #logout:hover {
     background-color: #ca2424;
 }
 
-#line {
+#additem {
+    float: left;
+    background-color: #7d1515;
+    width: 100px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+#additem:hover {
+    background-color: #ca2424;
+}
+
+#add {
+    background-color: #7d1515;
+    width: 100px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+
+#additem:hover {
+    background-color: #ca2424;
+}
+
+#back {
+    background-color: #7d1515;
+    width: 100px;
+    margin: auto;
+}
+
+#back:hover {
+    background-color: #ca2424;
+}
+
+.line {
     height: 12px;
-    width: 575px;
+    width: 15%;
+    margin-top: 14px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
     border: 0;
     box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
-    margin-top: -25px;
-    margin-left: 125px;
-    margin-bottom: 20px;
+    float: left;
+}
+
+#logged {
+    margin-top: 8px;
+    width: 200px;
+    text-align: center;
+    float: left;
 }
 
 .g-recaptcha {

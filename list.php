@@ -13,23 +13,35 @@ $user = $_SESSION['user'];
 
 <div id="logoutdiv">
     <form action="script-logout.php">
-        <?php echo $user?>
         <input type="submit" value="Log out" id="logout">
     </form>
 </div>
-<div id="line">&nbsp;</div>
+<div class="line">&nbsp</div>
+<div id="logged"> <?php echo "logged as " . $user; ?> </div>
+<div class="line">&nbsp</div>
+<div id="additemdiv">
+    <form action="item-adder.php">
+        <input type="submit" value="Add item" id="additem">
+    </form>
+</div>
+<div class="clear"></div>
+
 <table class='item_list'>
 
     <?php
-    $query = "SELECT user, name, description, link, image, price FROM items where user = '$user';";
+    $query = "SELECT id, user, name, description, link, image, price FROM items where user = '$user';";
     $result = $db->query($query);
+
+    if ($result->num_rows === 0) {
+        echo "<h2>Your list is empty.</h2>";
+    }
 
     if ($result) : while ($item = $result->fetch_object()):
         ?>
         <tr class='item'>
             <td>
                 <form action="script-delitem.php" method="post">
-                    <input type="hidden" name="delname" value=<?php echo "$item->name"; ?>>
+                    <input type="hidden" name="delid" value=<?php echo "$item->id"; ?>>
                     <input type="submit" value="X" class="delbutton">
                 </form>
             </td>
@@ -61,7 +73,8 @@ $user = $_SESSION['user'];
                 </a>
             </td>
         </tr>
-    <?php endwhile; endif; $result->free(); ?>
+    <?php endwhile; endif;
+    $result->free(); ?>
 </table>
 
 <?php include "./footer.php"; ?>

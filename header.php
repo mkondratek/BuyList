@@ -28,13 +28,13 @@ if (!isset($_SESSION['user']) OR empty($_SESSION['user'])) {
 else if (isset($_SESSION['user']) and !empty($_SESSION['user'])) {
     if ($_SERVER['REQUEST_URI'] == '/login.php'
         or $_SERVER['REQUEST_URI'] == '/register.php'
-        or $_SERVER['REQUEST_URI'] != '/script-login.php'
-        or $_SERVER['REQUEST_URI'] != '/script-register.php'
+        or $_SERVER['REQUEST_URI'] == '/script-login.php'
+        or $_SERVER['REQUEST_URI'] == '/script-register.php'
         or $_SERVER['REQUEST_URI'] == '/index.php'
         or $_SERVER['REQUEST_URI'] == '/login.php?'
         or $_SERVER['REQUEST_URI'] == '/register.php?'
-        or $_SERVER['REQUEST_URI'] != '/script-login.php?'
-        or $_SERVER['REQUEST_URI'] != '/script-register.php?'
+        or $_SERVER['REQUEST_URI'] == '/script-login.php?'
+        or $_SERVER['REQUEST_URI'] == '/script-register.php?'
         or $_SERVER['REQUEST_URI'] == '/index.php?') {
         header("Location: list.php");
         exit();

@@ -5,6 +5,7 @@ create table users (
 );
 
 CREATE table items (
+  id serial PRIMARY KEY,
   user VARCHAR(20) REFERENCES users(username),
   name VARCHAR(255),
   description text(1024),
