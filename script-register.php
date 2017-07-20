@@ -95,7 +95,6 @@ if ($db->errno != 0) {
 else {
     $_SESSION['registration_success'] = "<div class=\"success\">Account created.</div>";
     header("Location: /login.php");
-    unset($_SESSION['r_username']);
     unset($_SESSION['r_email']);
 }
 

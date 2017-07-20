@@ -20,7 +20,14 @@ if (isset($_SESSION['registration_success'])) {
 
 <form method="post" action="/script-login.php">
     <h1>Log in</h1>
-    <input type="text" name="username" id="username" placeholder="username">
+    <input type="text" name="username" id="username" placeholder="username" value=
+    <?php
+        if (isset($_SESSION['r_username'])){
+            echo $_SESSION['r_username'];
+            unset($_SESSION['r_username']);
+        }
+    ?>
+    >
     <br />
     <input type="password" name="password" id="password" placeholder="password">
     <br />

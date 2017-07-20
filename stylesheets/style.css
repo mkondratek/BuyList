@@ -222,7 +222,8 @@ input.submit:hover {
 }
 
 .item_image img {
-    margin: 0 16px 0 0;
+    margin: 16px;
+    width: 200px;
 }
 
 .item_price h3 {
@@ -306,7 +307,7 @@ input.submit:hover {
 
 
 
-#additem:hover {
+#add:hover {
     background-color: #ca2424;
 }
 
@@ -322,7 +323,7 @@ input.submit:hover {
 
 .line {
     height: 12px;
-    width: 15%;
+    width: 13%;
     margin-top: 14px;
     margin-left: 5px;
     margin-right: 5px;
@@ -335,9 +336,10 @@ input.submit:hover {
 
 #logged {
     margin-top: 8px;
-    width: 200px;
+    width: 225px;
     text-align: center;
     float: left;
+    font-family: "Ubuntu Mono", sans;
 }
 
 .g-recaptcha {

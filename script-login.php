@@ -12,6 +12,9 @@ if (session_status() === PHP_SESSION_NONE) {
 
 require_once "connect.php";
 
+//remember username
+$_SESSION['r_username'] = $_POST['username'];
+
 $username = htmlentities($_POST["username"], ENT_QUOTES, "UTF-8");
 $password = $_POST["password"];
 

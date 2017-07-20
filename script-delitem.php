@@ -12,7 +12,8 @@ if (session_status() === PHP_SESSION_NONE) {
 
 require_once "connect.php";
 
-$sql = sprintf("delete from items where id = " . $_POST['delid'] . ";");
+//todo delete image
+$sql = "delete from items where id = " . $_POST['delid'] . ";";
 $log = fopen("log.txt", "a");
 
 if (mysqli_query($db, $sql) == true) {

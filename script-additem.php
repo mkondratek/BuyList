@@ -12,11 +12,12 @@ if (session_status() === PHP_SESSION_NONE) {
 
 require_once "connect.php";
 
-$target_path = $_SERVER['DOCUMENT_ROOT']."./uploads/";
+$target_path = $_SERVER['DOCUMENT_ROOT']."/uploads/";
 $target_path = $target_path . basename( $_FILES['file']['name']);
 $file_location = "uploads/".$_FILES['file']['name'];
 move_uploaded_file($_FILES['file']['tmp_name'], $target_path);
-
+echo $target_path;
+exit();
 $username = $_SESSION['user'];
 $name = htmlentities($_POST['name']);
 $descpt = htmlentities($_POST['description']);
