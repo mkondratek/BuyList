@@ -50,11 +50,10 @@ $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteve
 
 $responseData = json_decode($verifyResponse);
 
-//// TODO repair repatcha issue
-//if($responseData->success) {
-//    $everythingisfine = false;
-//    $_SESSION['e_bot'] = "<div id=\"form_error\">Confirm being a human.</div>";
-//}
+if(!$responseData->success) {
+    $everythingisfine = false;
+    $_SESSION['e_bot'] = "<div id=\"form_error\">Confirm being a human.</div>";
+}
 
 if (!$everythingisfine) {
     header("Location: /register.php");

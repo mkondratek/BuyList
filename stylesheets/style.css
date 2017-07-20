@@ -147,6 +147,8 @@ h1 {
     color: #c80000;
     font-weight: bold;
     margin-bottom: 15px;
+    font-size: 16px;
+    font-family: "Ubuntu Mono", sans-serif;
 }
 
 #site_container h2 {
@@ -210,6 +212,8 @@ input.submit:hover {
     border: #7b9971 solid 1px;
     color: #fff;
     margin: 0 0 12px 0;
+    font-family: "Ubuntu Mono", sans-serif;
+    font-size: 18px;
 }
 
 .item td {
