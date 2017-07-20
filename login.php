@@ -11,6 +11,11 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 include_once "header.php";
+
+if (isset($_SESSION['registration_success'])) {
+    echo $_SESSION['registration_success'];
+    unset($_SESSION['registration_success']);
+}
 ?>
 
 <form method="post" action="/script-login.php">

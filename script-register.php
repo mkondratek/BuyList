@@ -10,11 +10,16 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once "connect.php";
-
 $email = $_POST["email"];
 $username = $_POST["username"];
 $password = $_POST["password"];
+
+// remembered data
+$_SESSION['r_email'] = $email;
+$_SESSION['r_username'] = $username;
+
+require_once "connect.php";
+
 
 // -- start of validation --
 
@@ -45,15 +50,17 @@ $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteve
 
 $responseData = json_decode($verifyResponse);
 
-if($responseData->success) {
-    $everythingisfine = false;
-    $_SESSION['e_bot'] = "<div id=\"form_error\">Confirm being a human.</div>";
-}
+//// TODO repair repatcha issue
+//if($responseData->success) {
+//    $everythingisfine = false;
+//    $_SESSION['e_bot'] = "<div id=\"form_error\">Confirm being a human.</div>";
+//}
 
 if (!$everythingisfine) {
     header("Location: /register.php");
     exit(0);
 }
+
 // -- end of validation --
 
 $password = password_hash($password, PASSWORD_DEFAULT);
@@ -70,10 +77,28 @@ if (mysqli_query($db, $sql) === TRUE) {
     fwrite($log, date("d-m-Y h:i:sa") . " REGISTRATION\n" . $sql . "\n");
 } else {
     fwrite($log, date("d-m-Y h:i:sa") . " REGISTRATION ERROR\n"
-        . $sql . "\n" . $db->error . "\n");
+        . $sql . "\n" . $db->error . " code: " . $db->errno . "\n");
+}
+
+if ($db->errno != 0) {
+    //email already taken
+    if (strpos($db->error, "users_email_uindex") !== false) {
+        $_SESSION['e_email'] = "<div id=\"form_error\">Email already taken.</div>";
+    }
+    //username already taken
+    else if (strpos($db->error, "PRIMARY") !== false) {
+        $_SESSION['e_username'] = "<div id=\"form_error\">Username already taken.</div>";
+    }
+
+    header("Location: /register.php");
+    fwrite($log, date("d-m-Y h:i:sa") . " REGISTRATION DB ERROR\n" . $db->error . "\n");
+}
+else {
+    $_SESSION['registration_success'] = "<div class=\"success\">Account created.</div>";
+    header("Location: /login.php");
+    unset($_SESSION['r_username']);
+    unset($_SESSION['r_email']);
 }
 
 fclose($log);
 $db->close();
-
-header("Location: /login.php");

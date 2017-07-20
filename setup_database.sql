@@ -1,6 +1,6 @@
 create table users (
   username VARCHAR(20) PRIMARY KEY,
-  email VARCHAR(255),
+  email VARCHAR(255) unique,
   password VARCHAR(255)
 );
 

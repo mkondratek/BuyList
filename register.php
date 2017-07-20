@@ -24,10 +24,20 @@ function print_error($error)
 
     <form method="post" action="/script-register.php">
         <h1>Register</h1>
-        <input type="text" name="username" id="username" placeholder="username">
+        <input type="text" name="username" id="username" placeholder="username"
+        <?php if (isset($_SESSION['r_username'])) {
+            echo 'value="'. $_SESSION['r_username'] . '"';
+            unset($_SESSION['r_username']);
+        } ?>
+        >
         <br/>
         <?php print_error('e_username'); ?>
-        <input type="email" name="email" id="email" placeholder="email">
+        <input type="email" name="email" id="email" placeholder="email"
+            <?php if (isset($_SESSION['r_email'])) {
+                echo 'value="'. $_SESSION['r_email'] . '"';
+                unset($_SESSION['r_email']);
+            } ?>
+        >
         <br/>
         <?php print_error('e_email'); ?>
         <input type="password" name="password" id="password" placeholder="password">
