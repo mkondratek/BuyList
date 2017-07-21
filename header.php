@@ -20,12 +20,12 @@ if (!isset($_SESSION['user']) OR empty($_SESSION['user'])) {
         and $_SERVER['REQUEST_URI'] != '/register.php?'
         and $_SERVER['REQUEST_URI'] != '/script-login.php?'
         and $_SERVER['REQUEST_URI'] != '/script-register.php?'
-        and $_SERVER['REQUEST_URI'] != '/index.php?') {
+        and $_SERVER['REQUEST_URI'] != '/index.php?'
+    ) {
         header("Location: index.php");
         exit();
     }
-}
-else if (isset($_SESSION['user']) and !empty($_SESSION['user'])) {
+} else if (isset($_SESSION['user']) and !empty($_SESSION['user'])) {
     if ($_SERVER['REQUEST_URI'] == '/login.php'
         or $_SERVER['REQUEST_URI'] == '/register.php'
         or $_SERVER['REQUEST_URI'] == '/script-login.php'
@@ -35,7 +35,8 @@ else if (isset($_SESSION['user']) and !empty($_SESSION['user'])) {
         or $_SERVER['REQUEST_URI'] == '/register.php?'
         or $_SERVER['REQUEST_URI'] == '/script-login.php?'
         or $_SERVER['REQUEST_URI'] == '/script-register.php?'
-        or $_SERVER['REQUEST_URI'] == '/index.php?') {
+        or $_SERVER['REQUEST_URI'] == '/index.php?'
+    ) {
         header("Location: list.php");
         exit();
     }
@@ -45,8 +46,8 @@ else if (isset($_SESSION['user']) and !empty($_SESSION['user'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
     <title>BuyList</title>
 
     <!-- stylesheets -->
@@ -58,10 +59,15 @@ else if (isset($_SESSION['user']) and !empty($_SESSION['user'])) {
 </head>
 <body>
 <div id="site_header">
-    <img id="site_logo" src="./images/logo.png" alt="BuyList logo">
-    <h1>BuyList</h1>
-    <h2>list whatever you want to buy
-        (even if you cannot afford it)</h2>
+    <a href= <?php if (isset($_SESSION['user']) and !empty($_SESSION['user'])) {
+        echo "./list.php";
+    } else echo "./index.php";
+    ?>>
+       <img id="site_logo" src="./images/logo.png" alt="BuyList logo">
+        <h1>BuyList</h1>
+        <h2>list whatever you want to buy
+            (even if you cannot afford it)</h2>
+    </a>
     <div class="clear"></div>
 </div>
 

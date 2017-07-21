@@ -181,6 +181,10 @@ label {
     margin: 0 0 4px 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 #addingform label {
     display: inline-block;
     margin: 15px;
