@@ -10,7 +10,7 @@
 </div>
 
 <div id="site_footer">
-    Created by <strong>mkondratek</strong> © Contact <a href="mailto:m.kondratek@o2.pl" class="mail">m.kondratek@o2.pl</a>
+    Created by <strong>mkondratek</strong> © Contact <a href="mailto:mik.kondratek@gmail.com" class="mail">mik.kondratek@gmail.com</a>
 </div>
 
 </body>
