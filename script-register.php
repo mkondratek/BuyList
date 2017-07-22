@@ -44,7 +44,7 @@ if (strlen($password) < 8) {
     $everythingisfine = false;
 }
 
-$secret_key = "6LdLqykUAAAAAAdceeQF7DzVOEFY-X_A1gAryaMY";
+$secret_key = "";
 
 $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret_key.'&response='.$_POST['g-recaptcha-response']);
 
